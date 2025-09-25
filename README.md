@@ -1,3 +1,4 @@
 # SCT_ML_1
 Task 1 - SkillCraft Technology Machine Learning Internship Sept 2025 
-![Uploading WhatsApp Image 2025-09-25 at 22.40.21_40b76ac2.jpg…]()
+
+![price_predictor_preview_jpg](https://github.com/user-attachments/assets/be9c68cc-2620-4881-bdbb-9baefb5ec5cd)
