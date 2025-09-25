@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Price Predictor</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🏠 House Price Predictor ©Deven2025</h1>
+    <form id="predictionForm">
+      <label for="GrLivArea">Living Area (sq ft):</label>
+      <input type="number" id="GrLivArea" min="100" required />
+
+      <label for="BedroomAbvGr">Bedrooms:</label>
+      <input type="number" id="BedroomAbvGr" min="0" max="10" required />
+
+      <label for="FullBath">Bathrooms:</label>
+      <input type="number" id="FullBath" min="0" max="10" required />
+
+      <label for="GarageArea">Garage Area (sq ft):</label>
+      <input type="number" id="GarageArea" min="0" required />
+
+      <label for="YearBuilt">Year Built:</label>
+      <input type="number" id="YearBuilt" min="1800" max="2025" required />
+
+      <label for="OverallQual">Overall Quality (1-10):</label>
+      <input type="number" id="OverallQual" min="1" max="10" required />
+
+      <button type="submit">Predict Price</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // Fade-in effect for body
+    window.addEventListener("load", () => document.body.classList.add("loaded"));
+  </script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

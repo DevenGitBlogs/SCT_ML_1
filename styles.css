@@ -1,0 +1,191 @@
+/* 🎨 Theme Variables */
+:root {
+  --primary:  #3fc467;
+  --primary-dark:  #3fc486;
+  --secondary: #3fc486;
+  --bg-dark:   #3fc486;
+  --bg-darker: #050505;
+  --card-bg: #060606;
+  --text-main: #f0f0f0;
+  --text-muted: #b5b5b5;
+  --border-radius: 10px;
+  --transition: all 0.25s ease-in-out;
+  --shadow-base: 0 4px 30px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 8px 40px rgba(0, 209, 42, 0.2);
+}
+
+/* 🌌 Page Layout */
+body {
+  background: radial-gradient(circle at center, var(--bg-dark), var(--bg-darker));
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+body.loaded {
+  opacity: 1;
+}
+
+/* 🖼️ Card Container */
+.container {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-base);
+  width: 380px;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
+  border: 5px solid #31a344; /* semi-transparent green */
+}
+.container:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* 🏷️ Title */
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  margin: 0.75rem auto 0;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+
+/* 📋 Form Labels */
+label {
+  display: block;
+  margin-top: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ✏️ Input Fields */
+.input-group {
+  position: relative;
+  margin-top: 0.5rem;
+}
+.input-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+.input-group:focus-within::after {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 209, 209, 0.15);
+}
+
+/* 🔘 Button */
+button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  border-radius: var(--border-radius);
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+}
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(27, 212, 212, 0.3);
+}
+button:hover::before {
+  left: 100%;
+}
+button:active {
+  transform: scale(0.98);
+}
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* 🖊️ Result Box */
+#result {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--secondary);
+  background: rgba(0, 255, 136, 0.08);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  transition: var(--transition);
+  min-height: 20px;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1.5rem;
+    width: 100%;
+    border-radius: 0;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  button {
+    font-size: 0.85rem;
+  }
+}
